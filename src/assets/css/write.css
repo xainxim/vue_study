@@ -1,0 +1,54 @@
+*{
+  list-style: none;
+  text-decoration: none;
+}
+
+.write{
+  padding-top: 50px;
+  width:1000px;
+  margin:0 auto;
+}
+header{
+  width:100%;
+  height:70px;
+  border-bottom: 5px solid #333;
+}
+h1{
+  text-align: center;
+}
+.write-title{
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  border-bottom: 1.5px solid #333;
+  text-align: center;
+}
+textarea{
+  width: 900px;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  /* border: solid 2px; */
+  resize: none;
+}
+input{
+  width: 800px;
+  height:30px;
+  
+}
+.write-section{
+  border-bottom: 1.5px solid #333;
+}
+button{
+  margin-top: 10px;
+  background-color: grey;
+  border: 0;
+  width: 70px;
+  height: 30px;
+
+}
+button a{
+  display: block;
+  color: whitesmoke;
+}
