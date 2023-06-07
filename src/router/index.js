@@ -12,6 +12,11 @@ path: "/write",
 name: "write",
 component: () => import("../components/WritePage.vue"),
 },
+{
+path: "/detail",
+name: "detail",
+component: () => import("../components/DetailPage.vue"),
+},
 ];
 
 const router = createRouter({

@@ -16,12 +16,12 @@
       </div>
       <div id="sub-menu">        
         <ul v-for="item in boardList" :key="item">
-          <li><a href="#">
-            {{ item.webIdx }}
-          </a></li>
           <li>
-            {{ item.title }}
+            {{ item.webIdx }}
           </li>
+          <li><router-link to="/detail">
+            {{ item.title }}
+          </router-link></li>
           <li>
             {{ item.hitCnt }}
           </li>

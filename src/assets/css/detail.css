@@ -1,0 +1,44 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+
+.detail{
+    padding-top: 50px;
+    width:1000px;
+    margin:0 auto;
+}
+header{
+    width:100%;
+    height:70px;
+    border-bottom: 5px solid #333;
+}
+h1{
+    text-align: center;
+}
+#menu{
+    width: 1000px;
+    height: 200px;
+}
+#menu > ul{
+    float: left;
+}
+#menu > ul > li{
+    width: 230px;
+    float: left;
+    text-align: center;
+}
+.detailInput{
+    width: 600px;
+    height: 30px;
+}
+.detailContent{
+    width: 1000px;
+
+    resize: none;
+}
+.detailBtn{
+    margin-top: 300px;
+    margin-right: 20px;
+    color: #fff;
+}

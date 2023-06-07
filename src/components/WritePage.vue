@@ -6,9 +6,9 @@
 
     <section class="write-section">
       <div class="write-title">
-        제목 &emsp;&emsp;<input type="text" name="title">
+        제목 &emsp;&emsp;<input type="text" class="writeInput">
       </div>
-      <textarea name="content" cols="130" rows="15"></textarea>
+      <textarea class="writeContent" cols="130" rows="15"></textarea>
       
     </section>
 
