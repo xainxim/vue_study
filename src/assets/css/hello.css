@@ -28,6 +28,19 @@ h1{
   width: 240px;
   text-align: center;
 }
+#sub-menu{
+  width: 1000px;
+  height: 300px;
+  border-bottom: 1px solid #333;
+  /* background-color: aliceblue; */
+}
+#sub-menu li{
+  float: left;
+  width: 240px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+}
 .hello-section{
   text-align: center;
   border-bottom: 1px solid #333;

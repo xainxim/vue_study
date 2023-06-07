@@ -14,7 +14,42 @@
           <li>작성일</li>
         </ul>
       </div>
-      <p>조회된 결과가 없습니다</p>
+      <div id="sub-menu">        
+        <ul v-for="item in boardList" :key="item">
+          <li><a href="#">
+            {{ item.webIdx }}
+          </a></li>
+          <li>
+            {{ item.title }}
+          </li>
+          <li>
+            {{ item.hitCnt }}
+          </li>
+          <li>
+            {{ item.createdDatetime }}
+          </li>
+        </ul>
+        <!-- <ul>
+          <li v-for="item in boardList" :key="item.webIdx">
+            {{ item.webIdx }}
+          </li>
+        </ul>
+        <ul>
+          <li v-for="item in boardList" :key="item.title">
+            {{ item.title }}
+          </li>
+        </ul>
+        <ul>
+          <li v-for="item in boardList" :key="item.hitCnt">
+            {{ item.hitCnt }}
+          </li>
+        </ul>
+        <ul>
+          <li v-for="item in boardList" :key="item.createdDatetime">
+            {{ item.createdDatetime }}
+          </li>
+        </ul> -->
+      </div>
     </section>
 
     <footer>
@@ -24,15 +59,44 @@
 </template>
 
 <script>
-// import WritePage from './WritePage.vue'
-
-export default {
+// import axios from 'axios';
+export default { 
   name: 'HelloWorld',
   components: {
   },
   props: {
     msg: String
-  }
+  },
+  el:'#sub-menu',
+  data() {
+    return {
+      boardList: [
+        {webIdx:''},
+        {title:''},
+        {hitCnt:''},
+        {createdDatetime:''}
+      ]
+    };
+  },
+  methods: {
+    // async getBoardList() {
+    //   this.boardList = await this.$api("http://localhost:8090/api/web","get");
+    //   console.log(this.boardList);
+    // }
+    getBoardList(){
+      this.axios.get("/api/web").then((res) => {
+        this.boardList = res.data;
+        // console.log(res.data.webIdx);
+        // console.log(this.boardList);
+        // console.log(res.data[0]);
+        // console.log(this.boardList);
+        // console.log(this.boardList);
+      });
+    }
+  },
+  created() {
+    this.getBoardList();
+  },
 }
 </script>
 
