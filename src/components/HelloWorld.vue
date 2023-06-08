@@ -19,7 +19,7 @@
           <li>
             {{ item.webIdx }}
           </li>
-          <li v-on:click="getBoardDetail(item.webIdx)">
+          <li v-on:click="getBoardDetail(item.webIdx)" style="cursor : pointer">
             {{ item.title }}
           </li>
           <li>

@@ -21,12 +21,12 @@
                 <li>제목</li>
                 <li><input type="text" :value="webTitle" class="detailInput" @input="webTitle=$event.target.value"></li>
             </ul>
-            <textarea class="detailContent" id="" cols="50" rows="20" :value="contents" @input="contents=$event.target.value"></textarea>
+            <textarea class="detailContent" cols="50" rows="20" :value="contents" @input="contents=$event.target.value"></textarea>
             </div>
             <footer>
                 <button class="detailBtn"><router-link to="/">목록으로</router-link></button>
                 <button class="detailBtn" v-on:click="updateList()">수정하기</button>
-                <button class="detailBtn">삭제하기</button>
+                <button class="detailBtn" v-on:click="deleteList()">삭제하기</button>
             </footer>
         </div>
     </div>
@@ -57,13 +57,22 @@ export default {
       });
     },
     updateList(){
-        this.axios.put("/api/web/"+ this.webIdx,{
+        this.axios.put("/api/web/",{
+            webIdx : this.webIdx,
             title : this.webTitle,
             contents : this.contents
         }).then((res) =>{
             if(res.status == '200'){
                 this.$router.push('/');
-                // console.log(this.webTitle);
+                console.log(this.webTitle);
+            }
+        })
+    },
+    deleteList(){
+        this.axios.delete("/api/web/" + this.webIdx).then((res) => {
+            if(res.status == '200'){
+                this.$router.push('/');
+                console.log(res);
             }
         })
     }

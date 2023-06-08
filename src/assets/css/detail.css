@@ -31,10 +31,14 @@ h1{
 .detailInput{
     width: 600px;
     height: 30px;
+    font-size: 1.5em;
+    margin-top: -5px;
 }
 .detailContent{
     width: 1000px;
+    height: 300px;
     resize: none;
+    font-size: 2em;
 }
 .detailBtn{
     margin-top: 300px;

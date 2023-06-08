@@ -13,7 +13,7 @@
     </section>
 
     <footer>
-      <botton v-on:click="saveDATA()">저장</botton>
+      <button v-on:click="saveDATA()" class="writeBtn">저장</button>
     </footer>
   </div>
 </template>
