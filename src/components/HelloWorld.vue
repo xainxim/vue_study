@@ -19,9 +19,9 @@
           <li>
             {{ item.webIdx }}
           </li>
-          <li><router-link to="/detail">
+          <li v-on:click="getBoardDetail(item.webIdx)">
             {{ item.title }}
-          </router-link></li>
+          </li>
           <li>
             {{ item.hitCnt }}
           </li>
@@ -29,26 +29,6 @@
             {{ item.createdDatetime }}
           </li>
         </ul>
-        <!-- <ul>
-          <li v-for="item in boardList" :key="item.webIdx">
-            {{ item.webIdx }}
-          </li>
-        </ul>
-        <ul>
-          <li v-for="item in boardList" :key="item.title">
-            {{ item.title }}
-          </li>
-        </ul>
-        <ul>
-          <li v-for="item in boardList" :key="item.hitCnt">
-            {{ item.hitCnt }}
-          </li>
-        </ul>
-        <ul>
-          <li v-for="item in boardList" :key="item.createdDatetime">
-            {{ item.createdDatetime }}
-          </li>
-        </ul> -->
       </div>
     </section>
 
@@ -59,7 +39,6 @@
 </template>
 
 <script>
-// import axios from 'axios';
 export default { 
   name: 'HelloWorld',
   components: {
@@ -79,19 +58,14 @@ export default {
     };
   },
   methods: {
-    // async getBoardList() {
-    //   this.boardList = await this.$api("http://localhost:8090/api/web","get");
-    //   console.log(this.boardList);
-    // }
     getBoardList(){
       this.axios.get("/api/web").then((res) => {
         this.boardList = res.data;
-        // console.log(res.data.webIdx);
-        // console.log(this.boardList);
-        // console.log(res.data[0]);
-        // console.log(this.boardList);
         // console.log(this.boardList);
       });
+    },
+    getBoardDetail(webIdx){
+      this.$router.push('/detail/' + webIdx);
     }
   },
   created() {

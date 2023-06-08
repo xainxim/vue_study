@@ -6,14 +6,14 @@
 
     <section class="write-section">
       <div class="write-title">
-        제목 &emsp;&emsp;<input type="text" class="writeInput">
+        제목 &emsp;&emsp;<input type="text" class="writeInput" v-model="title">
       </div>
-      <textarea class="writeContent" cols="130" rows="15"></textarea>
+      <textarea class="writeContent" cols="130" rows="15" v-model="contents"></textarea>
       
     </section>
 
     <footer>
-      <button><router-link to="/">저장</router-link></button>
+      <botton v-on:click="saveDATA()">저장</botton>
     </footer>
   </div>
 </template>
@@ -23,6 +23,30 @@
 export default {
   name: 'WritePage',
   components: {
+  },
+  data(){
+    return{
+      title : '',
+      contents : ''
+    }
+  },
+  methods: {
+    saveDATA(){
+      if(this.title == "" || this.contents == ""){
+        alert('제목, 내용 좀');
+        return;
+      }
+      this.axios.post("/api/web/write",{
+        title: this.title,
+        contents: this.contents
+      }).then((res) => {
+        if(res.status== '200'){
+          alert('저장 완료');
+          this.$router.push('/');
+        }
+      }
+      );
+    }
   },
 }
 </script>

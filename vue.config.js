@@ -10,7 +10,7 @@ module.exports = defineConfig({
     },
     proxy: {
       //프록시 요청을 보낼 api 시작 부분
-      '/api/web': {      
+      '/': {      
         target: 'http://localhost:8090',
         changeOrigin: true,
         ws:false

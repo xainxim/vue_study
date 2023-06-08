@@ -13,8 +13,8 @@ name: "write",
 component: () => import("../components/WritePage.vue"),
 },
 {
-path: "/detail",
-name: "detail",
+path: "/detail/:idx",
+// name: "detail",
 component: () => import("../components/DetailPage.vue"),
 },
 ];
