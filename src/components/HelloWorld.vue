@@ -100,7 +100,7 @@ export default {
     this.getBoardList();
   },
   computed: {
-    pageCount(){      
+    pageCount(){
       let listLeng = this.boardLength,
           listSize = this.pageSize,          
           page = Math.floor((listLeng - 1) / listSize) + 1;
