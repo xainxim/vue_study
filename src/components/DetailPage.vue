@@ -19,9 +19,9 @@
             </ul>
             <ul>
                 <li>제목</li>
-                <li><input type="text" :value="webTitle" class="detailInput" @input="webTitle=$event.target.value"></li>
+                <li><input type="text" :value="webTitle" class="detailInput" @input="webTitle = $event.target.value"></li>
             </ul>
-            <textarea class="detailContent" cols="50" rows="20" :value="contents" @input="contents=$event.target.value"></textarea>
+            <textarea class="detailContent" cols="50" rows="20" :value="contents" @input="contents = $event.target.value"></textarea>
             </div>
             <footer>
                 <button class="detailBtn"><router-link to="/">목록으로</router-link></button>
@@ -57,22 +57,23 @@ export default {
       });
     },
     updateList(){
-        this.axios.put("/api/web/",{
+        this.axios.put("/api/web/", {
             webIdx : this.webIdx,
             title : this.webTitle,
             contents : this.contents
-        }).then((res) =>{
+        }).then((res) => {
             if(res.status == '200'){
                 this.$router.push('/');
-                console.log(this.webTitle);
+
             }
+            console.log(this.webIdx);
+            console.log(this.title);
         })
     },
     deleteList(){
         this.axios.delete("/api/web/" + this.webIdx).then((res) => {
             if(res.status == '200'){
                 this.$router.push('/');
-                console.log(res);
             }
         })
     }
