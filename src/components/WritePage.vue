@@ -33,7 +33,7 @@ export default {
   methods: {
     saveDATA(){
       if(this.title == "" || this.contents == ""){
-        alert('제목, 내용 좀');
+        alert('제목과 내용을 입력해주세요 !');
         return;
       }
       this.axios.post("/api/web/write",{

@@ -57,6 +57,10 @@ export default {
       });
     },
     updateList(){
+        if(this.webTitle == "" || this.contents == ""){
+            alert('제목과 내용을 입력해주세요 !');
+            return;
+        }
         this.axios.put("/api/web/", {
             webIdx : this.webIdx,
             title : this.webTitle,
