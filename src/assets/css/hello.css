@@ -61,3 +61,11 @@ button a{
   display: block;
   color: whitesmoke;
 }
+.btn-cover{
+  width: 300px;
+  margin-left: 365px;
+}
+.btn-cover button{
+  background-color: #fff;
+  border: 1px solid #333;
+}
